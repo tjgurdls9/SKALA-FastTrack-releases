@@ -5,6 +5,8 @@ SKALA AX 부트캠프 비전공자 수강생을 위한 학습 보조 앱입니�
 
 이 저장소는 **앱 배포 전용**입니다. 최신 버전은 [Releases](../../releases/latest)에서 받으세요.
 
+📖 **[전체 사용 설명서 보기](https://tjgurdls9.github.io/SKALA-FastTrack-releases/guide.html)** — 화면별 기능과 비용이 발생하는 지점을 빠짐없이 정리했어요.
+
 ## 설치
 
 - **Apple Silicon(M시리즈) Mac**에서 동작합니다.
