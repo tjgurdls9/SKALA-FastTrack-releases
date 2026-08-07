@@ -396,22 +396,24 @@
         <div class="feature">
           <div class="feature-title">레슨을 "AI로 바로 만들기"로 열 때</div>
           <p class="feature-body">
-            개념 하나당 최초 1회만 AI를 호출해서 설명·다이어그램·퀴즈를 만들어요. 한 번 만들어지면 캐싱되니, 같은
-            개념을 다시 열어봐도 추가 비용은 없어요. "외부 챗봇으로 만들기"를 쓰면 이 비용도 없어요.
+            난이도(기초부터/보통/요약)마다 따로 만들어지고, 한 번 만든 난이도는 캐싱돼서 다시 열어봐도 추가
+            비용이 없어요. 숙련도가 올라 다른 난이도가 필요해지면 그때만 새로 호출하고, 이전에 만든 카드는
+            그대로 남아 탭으로 오가며 볼 수 있어요. "외부 챗봇으로 만들기"를 쓰면 이 비용도 없어요.
           </p>
         </div>
         <div class="feature">
           <div class="feature-title">코드 설명의 "전체 설명 보기" 버튼</div>
           <p class="feature-body">
-            이 버튼만 누르면 AI를 호출해요. 코드에 마우스를 올렸을 때 뜨는 호버 설명 자체는 이미 분석된 용어집·개념
-            데이터를 로컬에서 매칭하는 거라 API 호출이 전혀 없어요.
+            이 버튼만 누르면 AI를 호출해요. 외부 챗봇으로 같은 설명을 만들면 이 비용도 없어요. 코드에 마우스를
+            올렸을 때 뜨는 호버 설명 자체는 이미 분석된 용어집·개념 데이터를 로컬에서 매칭하는 거라 API 호출이
+            전혀 없어요.
           </p>
         </div>
       </div>
       <div>
         <div class="feature-title" style="margin-bottom:8px;">API 토큰이 들지 않는 기능들</div>
         <div class="chip-row">
-          <span class="chip">외부 챗봇으로 자료 분석·레슨 만들기</span>
+          <span class="chip">외부 챗봇으로 자료 분석·레슨·대주제 개요·코드 설명 만들기</span>
           <span class="chip">개념 점검·학습 플랜 조회 및 정리</span>
           <span class="chip">퀴즈 채점</span>
           <span class="chip">치트시트·용어집</span>
@@ -473,6 +475,14 @@
           </div>
         </div>
         <div class="feature">
+          <div class="feature-title">페이지 범위 선택 <span class="tag tag-new">신규</span></div>
+          <p class="feature-body">
+            PDF는 전체가 아니라 원하는 페이지 범위만 골라 분석할 수 있어요. 목차를 클릭하거나
+            <code>1-10, 12, 30~52</code>처럼 직접 적으면 되고, 고른 페이지만 인쇄 미리보기처럼 넘겨볼 수 있어요.
+            두 트랙(바로 분석·외부 챗봇) 모두에서 쓸 수 있고, 비워두면 예전처럼 전체를 분석해요.
+          </p>
+        </div>
+        <div class="feature">
           <div class="feature-title">외부 챗봇 트랙, 실제로는 이렇게 동작해요</div>
           <p class="feature-body">
             5단계 중 <strong>AI가 실제로 등장하는 건 챗봇에 붙여넣는 순간 딱 한 번</strong>이에요. 나머지(파일에서
@@ -502,7 +512,7 @@
       <div class="topic-head"><span class="icon">🧩</span><h2>개념 점검</h2><span class="route">/concepts</span></div>
       <div class="feature-card">
         <div class="feature">
-          <div class="feature-title">대주제 · 소주제 2단 구조 <span class="tag tag-new">신규</span></div>
+          <div class="feature-title">대주제 · 소주제 2단 구조</div>
           <p class="feature-body">
             자료 하나에서 나온 소주제(모듈)들이 의미가 비슷한 것끼리 자동으로 <strong>대주제</strong>로 묶여요
             (대주제 개수는 자료 내용에 따라 자동으로 정해져요). 대주제 헤더를 펼치면 2~3문장 개요와, 필요하면
@@ -510,6 +520,15 @@
             "이 대주제는 이미 다 아는 내용이에요" 버튼을 누르면 그 안의 소주제·개념을 통째로 아는 것으로 체크할
             수 있어요(다시 누르면 되돌릴 수 있어요). 예전에 대주제 계층이 생기기 전에 분석한 자료는 이 레이어 없이
             기존처럼 소주제 아코디언만 평평하게 보여요.
+          </p>
+        </div>
+        <div class="feature">
+          <div class="feature-title">대주제 개요 만들기 <span class="tag tag-new">신규</span></div>
+          <p class="feature-body">
+            대주제는 만들어졌는데 개요·다이어그램이 비어 있으면(예전에 분석했거나 대주제 단계를 건너뛴 자료)
+            "개요 만들기" 배너가 떠요. 등록한 AI로 바로 만들거나<span class="tag tag-cost">토큰 소모</span>
+            외부 챗봇으로 만들 수 있어요<span class="tag tag-free">API 키 불필요</span>. 개념 화면을 그냥
+            열기만 해서는 절대 만들어지지 않으니, 원할 때 직접 눌러야 해요.
           </p>
         </div>
         <div class="feature">
@@ -575,12 +594,14 @@
           </p>
         </div>
         <div class="feature">
-          <div class="feature-title">세 그룹 + 검색</div>
+          <div class="feature-title">네 그룹 + 검색</div>
           <p class="feature-body">
-            목록이 길어지지 않게 <strong>레슨 미생성</strong> · <strong>아직 학습하지 않음</strong>(기본 펼침) ·
-            <strong>학습 완료</strong>(기본 접힘) 세 그룹으로 나눠요. 자료가 새로 추가돼서 아직 이번 플랜에 안
-            들어간 개념이 있으면 "아직 플랜에 없음" 그룹도 나타나고, 눌러서 한 번에 포함시킬 수 있어요. 검색은
-            개념 이름뿐 아니라 모듈 이름으로도 찾을 수 있어요(예: "JOIN 심화").
+            목록이 길어지지 않게 <strong>레슨 미생성</strong> · <strong>난이도가 바뀌었어요</strong>(숙련도가
+            올라/내려가 새 난이도 카드가 아직 없는 것) · <strong>아직 학습하지 않음</strong>(레슨은 있는데 퀴즈를
+            안 풂) · <strong>학습 완료</strong> 네 그룹으로 나눠요. 네 그룹은 개수가 0이어도 접히지 않고 항상 다
+            같이 보여요. 자료가 새로 추가돼서 아직 이번 플랜에 안 들어간 개념이 있으면 "아직 플랜에 없음" 그룹도
+            따로 나타나고, 눌러서 한 번에 포함시킬 수 있어요. 검색은 개념 이름뿐 아니라 모듈 이름으로도 찾을 수
+            있어요(예: "JOIN 심화").
           </p>
         </div>
         <div class="feature">
@@ -590,6 +611,10 @@
             또는 ② 외부 챗봇으로 만들기 중 골라 만들 수 있어요. "레슨 미생성" 그룹의
             <strong>"외부 챗봇으로 한 번에 만들기"</strong>를 누르면, 아직 안 만든 레슨을 한 화면에서 개념별로
             이어서(자동으로 다음 개념으로 넘어가며) 만들 수 있어요.
+          </p>
+          <p class="feature-body">
+            숙련도에 따라 난이도가 자동으로 정해지고, 난이도가 바뀌어도 예전에 만든 카드는 사라지지 않아요 —
+            레슨 화면 위쪽 탭으로 난이도(최대 3개: 기초부터/보통/요약)를 오가며 전부 다시 볼 수 있어요.
           </p>
         </div>
         <div class="feature">
@@ -632,6 +657,13 @@
           <p class="feature-body">
             누르면 AI를 호출해서 전체 요약과 함께, 의미 있는 동작이 있는 줄마다 그 줄이 정확히 뭘 하고 왜 필요한지
             한 줄씩 설명해줘요(빈 줄이나 괄호만 있는 줄은 건너뛰어요).
+          </p>
+        </div>
+        <div class="feature">
+          <div class="feature-title">외부 챗봇으로 만들기 <span class="tag tag-free">API 키 불필요</span></div>
+          <p class="feature-body">
+            "전체 설명 보기" 대신 이 버튼을 누르면 프롬프트를 복사해 챗봇에 붙여넣고 답변을 다시 붙여넣는 것만으로
+            같은 전체 설명을 만들 수 있어요. 코드는 프롬프트 안에 이미 들어있어 따로 올릴 필요 없어요.
           </p>
         </div>
         <div class="feature">
@@ -678,6 +710,14 @@
             학습한 개념 중 내보내고 싶은 것만 체크해서(기본은 전부 해제 상태) PDF로 저장·인쇄할 수 있어요. 모듈
             카드마다 "모두 선택 / 모두 해제" 토글이 있어서 모듈 단위로 빠르게 고를 수 있어요.
           </div>
+        </div>
+        <div class="feature">
+          <div class="feature-title">난이도 선택 · 인쇄 버튼</div>
+          <p class="feature-body">
+            개념에 난이도별 카드가 여러 개 있으면, 내보낼 난이도(기초부터/보통/요약)를 골라서 그 난이도로 통일해
+            내보낼 수 있어요. 내보내기 화면을 열어도 곧바로 인쇄 창이 뜨지 않으니, 확인한 뒤 "PDF로 저장 / 인쇄"
+            버튼을 직접 눌러주세요.
+          </p>
         </div>
       </div>
     </section>
@@ -748,6 +788,13 @@
           <p class="faq-a">
             대주제는 소주제 이름만 보고 자동으로 묶는 편의 기능이라, 마음에 안 들면 그냥 무시하고 그 안의 소주제
             아코디언만 펼쳐서 봐도 전혀 문제없어요. 소주제·개념 자체는 대주제 묶음과 무관하게 그대로 다 남아있어요.
+          </p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">퀴즈를 풀어 난이도가 바뀌면 이전 설명은 없어지나요?</div>
+          <p class="faq-a">
+            아니요. 난이도별로 카드가 따로 저장돼서 이전 카드도 그대로 남아요. 레슨 화면 위 탭에서 난이도를 골라
+            언제든 다시 볼 수 있고, 새 난이도 카드는 직접 눌러야 만들어져요(자동으로 만들어지지 않아요).
           </p>
         </div>
         <div class="faq-item">
